@@ -1,18 +1,21 @@
-h1 Booking Details
+section.container.text-center
+  h1 Booking Details
 
-table
-  tr
-    th Car Type: 
-    td= @booking.car_type
-  tr
-    th Pickup Datetime: 
-    td= @booking.pickup_datetime
-  tr
-    th Pickup Location: 
-    td= @booking.pickup_location
-  tr
-    th Dropoff Location: 
-    td= @booking.dropoff_location
-  tr
-    th Total Price: 
-    td= "RM #{@booking.total_price}"
+section.table-responsive
+  table.table.table-bordered
+    thead.text-center
+      tr
+        th Car Type: 
+        td= @booking.car_type
+      tr
+        th Pickup Datetime: 
+        td= @booking.pickup_datetime
+      tr
+        th Pickup Location: 
+        td= @booking.pickup_location
+      tr
+        th Dropoff Location: 
+        td= @booking.dropoff_location
+      tr
+        th Total Price: 
+        td= "RM #{@booking.total_price}"

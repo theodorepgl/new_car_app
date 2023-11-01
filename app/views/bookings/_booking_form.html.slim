@@ -1,20 +1,21 @@
-= form_with model: @booking do |form|
-  table
-    tr
-      th= form.label :car_type, 'Car Type'
-      td= form.text_field :car_type
-    tr
-      th= form.label :pickup_datetime, 'Pickup Datetime'
-      td= form.datetime_field :pickup_datetime
-    tr
-      th= form.label :pickup_location, 'Pickup Location'
-      td= form.text_field :pickup_location
-    tr
-      th= form.label :dropoff_location, 'Dropoff Location'
-      td= form.text_field :dropoff_location
-    tr
-      th= form.label :total_price, 'Total Price'
-      td= form.text_field :total_price
+div.container
+  = form_with model: @booking do |form|
+    table
+      tr
+        th= form.label :car_type, 'Car Type:'
+        td= form.text_field :car_type
+      tr
+        th= form.label :pickup_datetime, 'Pickup Datetime:'
+        td= form.datetime_field :pickup_datetime
+      tr
+        th= form.label :pickup_location, 'Pickup Location:'
+        td= form.text_field :pickup_location
+      tr
+        th= form.label :dropoff_location, 'Dropoff Location:'
+        td= form.text_field :dropoff_location
+      tr
+        th= form.label :total_price, 'Total Price:'
+        td= form.text_field :total_price
 
-  .actions
-    = form.submit 'Save'
+    .actions
+      = form.submit 'Place Booking'
