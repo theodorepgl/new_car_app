@@ -2,7 +2,6 @@
   table
     tr
       th= form.label :user_id, 'User'
-      td= form.collection_select :user_id, User.all, :id, :name, prompt: true
     tr
       th= form.label :car_type, 'Car Type'
       td= form.text_field :car_type

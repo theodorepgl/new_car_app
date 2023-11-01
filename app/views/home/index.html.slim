@@ -10,29 +10,74 @@ html lang="en"
 			br
 		section.row.row-cols-3
 			section.col
-				= image_tag 'kudat', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'kudat', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'kudat', height: 300, width: 500
 				p.text-center Kota Kinabalu to Kudat
 			section.col
-				= image_tag 'km', height: 300, width: 500
-				p.text-center Kota Kinabalu to Kota Marudu
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'km', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'km', height: 300, width: 500
+				p.text-center Kota Kinabalu to Kota Maruru
 			section.col
-				= image_tag 'ranau', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'ranau', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'ranau', height: 300, width: 500
 				p.text-center Kota Kinabalu to Ranau
 			section.col
-				= image_tag 'sandakan', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'sandakan', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'sandakan', height: 300, width: 500
 				p.text-center Kota Kinabalu to Sandakan
 			section.col
-				= image_tag 'papar', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'papar', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'papar', height: 300, width: 500
 				p.text-center Kota Kinabalu to Papar
 			section.col
-				= image_tag 'tawau', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'tawau', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'tawau', height: 300, width: 500
 				p.text-center Kota Kinabalu to Tawau
 			section.col
-				= image_tag 'sipitang', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'sipitang', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'sipitang', height: 300, width: 500
 				p.text-center Kota Kinabalu to Sipitang
 			section.col
-				= image_tag 'tenom', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'tenom', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'tenom', height: 300, width: 500
 				p.text-center Kota Kinabalu to Tenom
 			section.col
-				= image_tag 'nabawan', height: 300, width: 500
+				- if user_signed_in?
+					= link_to new_booking_path do
+						= image_tag 'nabawan', height: 300, width: 500
+				- else
+					= link_to new_user_session_path do
+						= image_tag 'nabawan', height: 300, width: 500
 				p.text-center Kota Kinabalu to Nabawan
