@@ -1,8 +1,6 @@
 = form_with model: @booking do |form|
   table
     tr
-      th= form.label :user_id, 'User'
-    tr
       th= form.label :car_type, 'Car Type'
       td= form.text_field :car_type
     tr

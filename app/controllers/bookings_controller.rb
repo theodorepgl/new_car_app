@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = current_user.bookings.create(booking_params)
 
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created.'
@@ -41,11 +41,11 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_booking
-    @booking = Booking.find(params[:id])
+  def booking_params
+    params.require(:booking).permit(:car_type, :pickup_datetime, :pickup_location, :dropoff_location, :total_price)
   end
 
-  def booking_params
-    params.require(:booking).permit(:user_id, :car_type, :pickup_datetime, :pickup_location, :dropoff_location, :total_price)
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
