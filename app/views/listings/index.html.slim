@@ -1,2 +1,32 @@
-p index
-= link_to "New Listing", new_listing_path
+div.container.text-center
+	body
+		section.container.text-center
+			h1.text-center Welcome to New Car Delivery Homepage
+			br
+			section.row.row-cols-3
+				- @listing.each_with_index do |listing, index|
+					section.col
+						= link_to new_booking_path do
+							= image_tag listing.photos, height: 250, width: 400
+						p.text-center = listing.pickup_location
+						p.text-center = listing.dropoff_location
+	h1 Welcome to New Car Delivery Homepage
+	div.table-responsive
+	  table.table.table-striped.table-sm
+	    thead
+	      tr
+	        th scope="col" No
+	        th scope="col" Pickup Location
+	        th scope="col" Dropoff Location
+	        th scope="col" Distance
+	        th scope="col" Price
+
+	    - @listing.each_with_index do |listing, index|
+	      tr
+	        td= index + 1
+	        td= listing.pickup_location
+	        td= listing.dropoff_location
+	        td= listing.distance
+	        td= listing.price
+
+	= link_to "New Listing", new_listing_path, class: 'btn btn-secondary me-2'

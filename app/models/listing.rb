@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
 	has_many :bookings
 
-	has_many_attached :photos
+	has_one_attached :photos
 end

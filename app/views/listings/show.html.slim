@@ -1,6 +1,6 @@
 div.container.text-center
 	- if @listing.photos.attached?
-	  = image_tag @listing.photos.first, height:200
+	  = image_tag @listing.photos, height:200
 	p = "From: #{@listing.pickup_location}"
 	p = "To: #{@listing.dropoff_location}"
 	p = "#{@listing.distance} km"
