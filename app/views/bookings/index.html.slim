@@ -4,13 +4,17 @@ section.container.text-center
   h2 Booking Details
 
   - if user_bookings.any?
-    - user_bookings.each do |booking|
-      p Car Type: #{booking.car_type}
-      p Pickup Time: #{booking.pickup_datetime}
-      p Pickup Location: #{booking.pickup_location}
-      p Dropoff Location: #{booking.dropoff_location}
-      p Price: RM#{booking.total_price}
-
-      = link_to 'Edit Booking', edit_booking_path(booking), class: 'btn btn-primary'
+    - user_bookings.in_groups_of(3, false) do |group|
+      .row
+        - group.each do |booking|
+          .col-md-4
+            .card.mb-3
+              .card-body
+                p.card-text Car Type: #{booking.car_type}
+                p.card-text Pickup Time: #{booking.pickup_datetime}
+                p.card-text Pickup Location: #{booking.pickup_location}
+                p.card-text Dropoff Location: #{booking.dropoff_location}
+                p.card-text Price: RM#{booking.total_price}
+                = link_to 'Edit Booking', edit_booking_path(booking), class: 'btn btn-secondary'
   - else
     p Not Found.
