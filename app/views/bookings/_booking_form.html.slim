@@ -3,16 +3,16 @@ div.container
     table
       tr
         th= form.label :car_type, 'Car Type:'
-        td= form.text_field :car_type
+        td= form.select :car_type, ['SELECT CAR TYPE', 'MOTORCYCLE', 'SMALL VEHICHLE', 'LARGE VEHICLE', 'LORRY']
       tr
         th= form.label :pickup_datetime, 'Pickup Datetime:'
         td= form.datetime_field :pickup_datetime
       tr
         th= form.label :pickup_location, 'Pickup Location:'
-        td= form.text_field :pickup_location
+        td= form.select :pickup_location, ['KOTA KINABALLU']
       tr
         th= form.label :dropoff_location, 'Dropoff Location:'
-        td= form.text_field :dropoff_location
+        td= form.select :dropoff_location, ['SELECT YOUR LOCATION', 'KUDAT', 'KOTA MARUDU', 'RANAU', 'SANDAKAN', 'PAPAR', 'TAWAU', 'SIPITANG', 'TENOM', 'NABAWAN']
       tr
         th= form.label :total_price, 'Total Price:'
         td= form.text_field :total_price
