@@ -1,0 +1,21 @@
+div.container
+  = form_with model: @listing do |form|
+    table
+      tr
+      	th= form.label :pickup_location, 'Pickup Location:'
+      	td= form.text_field :pickup_location
+      tr
+      	th= form.label :dropoff_location, 'Dropoff Location:'
+      	td= form.text_field :dropoff_location
+      tr
+      	th= form.label :distance, 'Total Distance:'
+      	td= form.text_field :distance
+      tr
+      	th= form.label :price, 'Delivery Price:'
+      	td= form.text_field :price
+      tr
+      	th= form.label :photos
+		td= form.file_field :photos
+
+
+    = form.submit 'Create List'

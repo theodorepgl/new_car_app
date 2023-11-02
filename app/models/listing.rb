@@ -1,3 +1,5 @@
 class Listing < ApplicationRecord
-	belongs_to :bookings
+	has_many :bookings
+
+	has_many_attached :photos
 end

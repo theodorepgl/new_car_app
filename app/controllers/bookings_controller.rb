@@ -6,9 +6,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def show
-  end
-
   def new
     @booking = Booking.new
   end
@@ -21,6 +18,9 @@ class BookingsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
   end
 
   def edit
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to bookings_url, notice: 'Booking was successfully destroyed.'
+    redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
   end
 
   private
