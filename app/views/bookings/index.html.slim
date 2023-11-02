@@ -16,5 +16,6 @@ section.container.text-center
                 p.card-text Dropoff Location: #{booking.dropoff_location}
                 p.card-text Price: RM#{booking.total_price}
                 = link_to 'Edit Booking', edit_booking_path(booking), class: 'btn btn-secondary'
+                = link_to 'Delete Booking', booking_path(booking), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger'
   - else
     p Not Found.
