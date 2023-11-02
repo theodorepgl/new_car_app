@@ -1,7 +1,10 @@
-p = @listing.pickup_location
-p = @listing.dropoff_location
-p = @listing.distance
-p = @listing.price
-p = @listing.photos
-- if @listing.photos.attached?
-  p Photos are attached!
+div.container.text-center
+	- if @listing.photos.attached?
+	  = image_tag @listing.photos.first, height:200
+	p = "From: #{@listing.pickup_location}"
+	p = "To: #{@listing.dropoff_location}"
+	p = "#{@listing.distance} km"
+	p = "RM #{@listing.price}"
+
+	= link_to 'Edit Listing', edit_listing_path(@listing)
+	= link_to 'Delete Listing', listing_path(@listing), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }
