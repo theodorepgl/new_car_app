@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listing = Listing.all
+    @listing = Listing.all.order(:created_at)
   end
 
   def new
@@ -23,6 +23,14 @@ class ListingsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @listing.update(listing_params)
+      redirect_to @listing, notice: 'Listing was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
