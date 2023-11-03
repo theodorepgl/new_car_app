@@ -1,4 +1,4 @@
-class Customer::ReviewsController < ApplicationController
+class ReviewsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :find_booking
 	before_action :find_review, only: [:edit, :update, :destroy]
