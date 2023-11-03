@@ -12,7 +12,7 @@ div.container.text-center
 						p.card-text = listing.dropoff_location
 						p.card-text = listing.distance
 						p.card-text = number_to_currency(listing.price, unit:"RM ")
-						p = link_to 'Make Booking', new_booking_path, class: 'btn btn-outline-warning'
+						p = link_to 'Make Booking', new_booking_path, class: 'btn btn-secondary'
 
 						br
 	h1 Welcome to New Car Delivery Homepage
@@ -34,6 +34,6 @@ div.container.text-center
 	        td= listing.dropoff_location
 	        td= listing.distance
 	        td= listing.price
-	        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-outline-info'
+	        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-secondary'
 
 	= link_to 'New Listing', new_listing_path, class: 'btn btn-secondary me-2'
