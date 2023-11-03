@@ -6,11 +6,11 @@ div.container.text-center
 			div.col-md-4
 				div.card.mb-3
 					div.card-body
-<<<<<<< HEAD
-=======
 						= link_to new_booking_path do
-							= image_tag listing.photos, height: 250, width: 380
->>>>>>> 5d3b360e4035c2cce956b3ba73f7da1c2d9e2c89
+							- if listing.photos.attached?
+								= image_tag listing.photos, height: 250, width: 380
+							- else
+								p no photo
 						p.card-text = listing.pickup_location
 						p.card-text = listing.dropoff_location
 						p.card-text = listing.distance
