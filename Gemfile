@@ -18,6 +18,7 @@ gem "sassc-rails"
 gem "slim-rails"
 gem 'bootstrap', '~> 5.3.2'
 gem "autoprefixer-rails"
+gem "braintree"
 
 # ActiveStorage
 gem "image_processing", "~> 1.2"
