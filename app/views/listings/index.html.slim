@@ -1,15 +1,18 @@
 div.container.text-center
-	body
-		section.container.text-center
-			h1.text-center Welcome to New Car Delivery Homepage
-			br
-			section.row.row-cols-3
-				- @listing.each_with_index do |listing, index|
-					section.col
-						= link_to new_booking_path do
-							= image_tag listing.photos, height: 250, width: 400
-						p.text-center = listing.pickup_location
-						p.text-center = listing.dropoff_location
+	h1.text-center Welcome to New Car Delivery Homepage
+	br
+	div.row.row-cols-3
+		- @listing.each_with_index do |listing, index|
+			div.col-md-4
+				div.card.mb-3
+					div.card-body
+						p.card-text = listing.pickup_location
+						p.card-text = listing.dropoff_location
+						p.card-text = listing.distance
+						p.card-text = number_to_currency(listing.price, unit:"RM ")
+						p = link_to 'Make Booking', new_booking_path, class: 'btn btn-secondary'
+
+						br
 	h1 Welcome to New Car Delivery Homepage
 	div.table-responsive
 	  table.table.table-striped.table-sm
@@ -20,6 +23,7 @@ div.container.text-center
 	        th scope="col" Dropoff Location
 	        th scope="col" Distance
 	        th scope="col" Price
+	        th scope="col" Edit
 
 	    - @listing.each_with_index do |listing, index|
 	      tr
@@ -28,5 +32,6 @@ div.container.text-center
 	        td= listing.dropoff_location
 	        td= listing.distance
 	        td= listing.price
+	        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-secondary'
 
-	= link_to "New Listing", new_listing_path, class: 'btn btn-secondary me-2'
+	= link_to 'New Listing', new_listing_path, class: 'btn btn-secondary me-2'
