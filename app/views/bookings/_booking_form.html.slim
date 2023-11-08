@@ -1,3 +1,13 @@
-div.container
-  = form_with model: @booking do |form|
-    
+div.container.w-50.bg-secondary.rounded-5.p-5
+  = form_with model: @listing do |form|
+    div.mx-5
+      h4
+        = form.label :pickup_location, class: "form-label"
+        = form.label :pickup_location, class: "form-label"
+      p 
+        = form.text_field :pickup_location, class: "form-control"
+
+
+    = form.submit 'Book Now'
+    br
+    = link_to 'Back To Homepage', listings_path(@lising), class: 'btn btn-dark'
