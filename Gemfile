@@ -45,5 +45,7 @@ group :development do
   gem 'capistrano-rails-tail-log'
   gem 'capistrano-rails-db'
   gem 'capistrano-rake', require: false
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf', '< 2.0'
 
 end
