@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @listing = Listing.find_by(id: params[:listing_id])
     @booking = Booking.new
   end
 
@@ -24,6 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @listing = Listing.find_by(id: @booking.listing_id)
   end
 
   def update
@@ -42,7 +44,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:car_type, :pickup_datetime, :pickup_location, :dropoff_location, :total_price)
+    params.require(:booking).permit(:photos, :car_type, :pickup_datetime, :listing_id)
   end
 
   def set_booking

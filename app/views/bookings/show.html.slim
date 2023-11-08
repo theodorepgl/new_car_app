@@ -12,11 +12,11 @@ section.container.text-center
           td= @booking.pickup_datetime
         tr
           th Pickup Location: 
-          td= @booking.pickup_location
+          td= @booking.listing.pickup_location
         tr
           th Dropoff Location: 
-          td= @booking.dropoff_location
+          td= @booking.listing.dropoff_location
         tr
           th Total Price: 
-          td= "RM #{@booking.total_price}"
+          td= "RM #{@booking.listing.price}"
     = link_to 'Your Bookings', bookings_path, class: 'btn btn-secondary'

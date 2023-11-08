@@ -1,13 +1,26 @@
 div.container.w-50.bg-secondary.rounded-5.p-5
-  = form_with model: @listing do |form|
-    div.mx-5
-      h4
-        = form.label :pickup_location, class: "form-label"
-        = form.label :pickup_location, class: "form-label"
-      p 
-        = form.text_field :pickup_location, class: "form-control"
+  = form_with model: @booking do |form|
+    = image_tag @listing.photos, height: 250, width: 500
+    table
+      tr
+        th= form.label :car_type, 'Car Model Type: '
+        td= form.select :car_type, options_for_select(['Select Car Model', 'PERODUA', 'PROTON', 'TOYOTA', 'HONDA', 'SUBARU', 'MITSUBISHI'])
 
-
-    = form.submit 'Book Now'
-    br
-    = link_to 'Back To Homepage', listings_path(@lising), class: 'btn btn-dark'
+      tr
+        th= form.label :pickup_datetime, 'Pickup Datetime:'
+        td= form.datetime_field :pickup_datetime
+      tr
+        th= form.label :pickup_location, 'Pickup Location:'
+        td= form.text_field :pickup_location, value: @listing.pickup_location, readonly: true
+      tr
+        th= form.label :dropoff_location, 'Dropoff Location:'
+        td= form.text_field :dropoff_location, value: @listing.dropoff_location, readonly: true
+      tr
+        th= form.label :distance, 'Total Distance:'
+        td= form.text_field :distance, value: @listing.distance, readonly: true
+      tr
+        th= form.label :price, 'Delivery Price:'
+        td= form.text_field :price, value: @listing.price, readonly: true
+        
+    = form.hidden_field :listing_id, value: @listing.id
+    = form.submit 'Book Now', class: "btn btn-light"

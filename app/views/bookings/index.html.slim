@@ -12,9 +12,10 @@ div.container.text-center
               .card-body
                 p.card-text Car Type: #{booking.car_type}
                 p.card-text Pickup Time: #{booking.pickup_datetime}
-                p.card-text Pickup Location: #{booking.pickup_location}
-                p.card-text Dropoff Location: #{booking.dropoff_location}
-                p.card-text Price: RM#{booking.total_price}
+                p.card-text Pickup Location: #{booking.listing.pickup_location}
+                p.card-text Dropoff Location: #{booking.listing.dropoff_location}
+                p.card-text Price: RM#{booking.listing.price}
+                br
                 = link_to 'Edit Booking', edit_booking_path(booking), class: 'btn btn-secondary me-2'
                 = link_to 'Delete Booking', booking_path(booking), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger'
   - else
