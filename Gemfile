@@ -6,7 +6,7 @@ ruby "3.2.2"
 # Core gems
 gem "rails", "~> 7.0.8"
 gem "pg", "~> 1.1"
-gem "puma", "~> 5.0"
+gem "puma", "< 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
@@ -45,5 +45,7 @@ group :development do
   gem 'capistrano-rails-tail-log'
   gem 'capistrano-rails-db'
   gem 'capistrano-rake', require: false
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf', '< 2.0'
 
 end
