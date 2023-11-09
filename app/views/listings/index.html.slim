@@ -1,23 +1,26 @@
-div.container.text-center
-	h1.text-center Welcome to Teddy Car Delivery Service Homepage
+div.container
+	h1.text-center Welcome to Homepage
 	br
-	div.row.row-cols-3
+	div.row
 		- @listing.each_with_index do |listing, index|
-			div.col-md-4
-				div.card.mb-3
+			div.col-md-4.mb-3
+				div.card.h-100
+					= link_to new_booking_path(listing_id: listing.id) do
+						- if listing.photos.attached?
+							= image_tag listing.photos, height: 250, width: 380
+						- else
+							p no photo
 					div.card-body
-						= link_to new_booking_path(listing_id: listing.id) do
-							- if listing.photos.attached?
-								= image_tag listing.photos, height: 250, width: 380
-							- else
-								p no photo
 						p.card-text = "FROM: #{listing.pickup_location}"
 						p.card-text = "TO: #{listing.dropoff_location}"
 						p.card-text = "#{listing.distance} KM"
 						p.card-text = number_to_currency(listing.price, unit:"RM ")
 						p = link_to 'Make Booking', new_booking_path(listing_id: listing.id), class: 'btn btn-secondary'
 
-						br
+					br
+
+
+						
 	- if user_signed_in?
 		- if current_user.is_admin?			
 			h1 CREATING NEW LIST ZONE
