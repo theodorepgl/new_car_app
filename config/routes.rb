@@ -33,6 +33,13 @@ Rails.application.routes.draw do
   get 'telupid', to: 'home#telupid'
   get 'tongod', to: 'home#tongod'
 
+  #Tawau Division
+  get 'kalabakan', to: 'home#kalabakan'
+  get 'kunak', to: 'home#kunak'
+  get 'lahaddatu', to: 'home#lahaddatu'
+  get 'semporna', to: 'home#semporna'
+  get 'tawau', to: 'home#tawau'
+
   # Defines the root path route ("/")
   root "listings#index"
   resources :listings
