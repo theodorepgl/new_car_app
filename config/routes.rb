@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'kudat', to: 'home#kudat'
   get 'km', to: 'home#km'
   get 'pitas', to: 'home#pitas'
-  
+  get 'kb', to: 'home#kb'
   # Defines the root path route ("/")
   root "listings#index"
   resources :listings
