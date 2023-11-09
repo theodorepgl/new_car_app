@@ -26,6 +26,13 @@ Rails.application.routes.draw do
   get 'tambunan', to: 'home#tambunan'
   get 'tenom', to: 'home#tenom'
 
+  #Sandakan Division
+  get 'beluran', to: 'home#beluran'
+  get 'kinabatangan', to: 'home#kinabatangan'
+  get 'sandakan', to: 'home#sandakan'
+  get 'telupid', to: 'home#telupid'
+  get 'tongod', to: 'home#tongod'
+
   # Defines the root path route ("/")
   root "listings#index"
   resources :listings
