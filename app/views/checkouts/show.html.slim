@@ -26,7 +26,7 @@ div.container.w-50
       section
         h5 Transaction
         <table cellpadding="0" cellspacing="0">
-          tbody
+          tbody.text-center
             tr
               th id
               td = @transaction.id
@@ -49,7 +49,7 @@ div.container.w-50
       section
         h5 Payment
         <table cellpadding="0" cellspacing="0">
-          tbody
+          tbody.text-center
             tr
               th token
               td = @transaction.credit_card_details.token
