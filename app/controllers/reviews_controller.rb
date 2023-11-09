@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
 
 	def update
 		if @review.update(review_params)
-			redirect_to customer_booking_path(@booking)
+			redirect_to listing_booking_path(@booking)
 		else
 			render 'edit'
 		end
@@ -37,7 +37,7 @@ class ReviewsController < ApplicationController
 
 	def destroy
 		@review.destroy
-		redirect_to customer_car_path(@car)
+		redirect_to listing_booking_path(@booking)
 	end
 
 	private
