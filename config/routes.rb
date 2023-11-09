@@ -37,4 +37,7 @@ Rails.application.routes.draw do
   root "listings#index"
   resources :listings
   resources :bookings
+
+  get 'checkouts', to: 'checkouts#new'
+  resources :checkouts,  only: [:new, :create, :show]
 end
