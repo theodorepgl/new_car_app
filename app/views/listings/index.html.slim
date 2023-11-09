@@ -7,7 +7,7 @@ div.container
 				div.card.h-100
 					= link_to new_booking_path(listing_id: listing.id) do
 						- if listing.photos.attached?
-							= image_tag listing.photos, height: 250, width: 380
+							= image_tag listing.photos, height: 250, class: "img-fluid"
 						- else
 							p no photo
 					div.card-body
