@@ -19,7 +19,7 @@ div.container.text-center
                 = link_to 'Edit Booking', edit_booking_path(booking), class: 'btn btn-secondary me-2'
                 = link_to 'Delete Booking', booking_path(booking), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger'
                 br
-                = link_to 'PROCEED TO CHECKOUT', new_checkout_path(Total Price: @booking.listing.price), method: :get, class: 'btn btn-success'
+                = link_to 'PROCEED TO CHECKOUT', new_checkouts_path(Total Price: @booking.listing.price), method: :get, class: 'btn btn-success'
 
   - else
     p Not Found.
