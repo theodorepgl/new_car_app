@@ -1,5 +1,5 @@
 div.container.text-center
-	h1.text-center Welcome to New Car Delivery Homepage
+	h1.text-center Welcome to Teddy Car Delivery Service Homepage
 	br
 	div.row.row-cols-3
 		- @listing.each_with_index do |listing, index|
@@ -20,7 +20,7 @@ div.container.text-center
 						br
 	- if user_signed_in?
 		- if current_user.is_admin?			
-			h1 Welcome to New Car Delivery Homepage
+			h1 CREATING NEW LIST ZONE
 			div.table-responsive
 			  table.table.table-striped.table-sm
 			    thead
