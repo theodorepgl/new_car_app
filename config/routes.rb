@@ -16,7 +16,16 @@ Rails.application.routes.draw do
   get 'ranau', to: 'home#ranau'
   get 'tuaran', to: 'home#tuaran'
 
-  
+  #Interior Division
+  get 'beaufort', to: 'home#beaufort'
+  get 'keningau', to: 'home#keningau'
+  get 'kualapenyu', to: 'home#kualapenyu'
+  get 'membakut', to: 'home#membakut'
+  get 'nabawan', to: 'home#nabawan'
+  get 'sipitang', to: 'home#sipitang'
+  get 'tambunan', to: 'home#tambunan'
+  get 'tenom', to: 'home#tenom'
+
   # Defines the root path route ("/")
   root "listings#index"
   resources :listings
