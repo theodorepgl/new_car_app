@@ -1,4 +1,4 @@
-section.col-md-4.offset-md-4.bg-info.rounded-5.p-5
+section.container.bg-info.rounded-5.p-5
   = form_with model: @listing do |form|
     table
       tr
@@ -18,4 +18,4 @@ section.col-md-4.offset-md-4.bg-info.rounded-5.p-5
 		    td= form.file_field :photos
 
 
-    	= form.submit 'Create List'
+    = form.submit 'Create List'
