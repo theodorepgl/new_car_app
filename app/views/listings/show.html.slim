@@ -4,7 +4,7 @@ section.col-md-4.offset-md-4.bg-info.rounded-5.p-5
 	p = "Total Distance: #{@listing.distance} km"
 	p = "Total Price: RM #{@listing.price}"
 
-	= link_to 'Edit Listing', edit_listing_path(@listing), class: 'btn btn-outline-secondary'
-	= link_to 'Delete Listing', listing_path(@listing), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-warning'
- 	= link_to 'Back', root_path, class: 'btn btn-outline-dark'
+	= link_to 'Edit Listing', edit_listing_path(@listing), class: 'btn btn-info'
+	= link_to 'Delete Listing', listing_path(@listing), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger'
+ 	= link_to 'Back', root_path, class: 'btn btn-light'
 
