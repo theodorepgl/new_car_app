@@ -35,6 +35,7 @@ div.container
 			        th scope="col" Distance (KM)
 			        th scope="col" Price (RM)
 			        th scope="col" Edit
+					th scope="col" Delete
 
 			    - @listing.each_with_index do |listing, index|
 			      tr
@@ -44,5 +45,7 @@ div.container
 			        td= listing.distance
 			        td= listing.price
 			        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-dark'
+					td= link_to 'Delete Listing', listing_path(@listing), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger'
+
 
 			= link_to 'New Listing', new_listing_path, class: 'btn btn-success'
