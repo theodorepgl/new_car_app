@@ -1,4 +1,4 @@
-section.container.bg-info.rounded-5.p-5
+section.col-md-4.offset-md-4.bg-light.rounded-5.p-5
   = form_with model: @listing do |form|
     table
       tr
@@ -18,4 +18,4 @@ section.container.bg-info.rounded-5.p-5
 		    td= form.file_field :photos
 
 
-    = form.submit 'Create List', class: 'btn btn-success'
+    = form.submit 'Create List', class: 'btn btn-light'
