@@ -1,5 +1,6 @@
 div.container
-	h1.text-center Welcome to Homepage
+	h1.text-center Welcome to Homepage 
+	h3.text-center Select the location you want to delivery your vehicles
 	br
 	div.row
 		- @listing.each_with_index do |listing, index|
@@ -28,11 +29,11 @@ div.container
 			  table.table.table-striped.table-sm
 			    thead
 			      tr
-			        th scope="col" No
+			        th scope="col" No.
 			        th scope="col" Pickup Location
 			        th scope="col" Dropoff Location
-			        th scope="col" Distance
-			        th scope="col" Price
+			        th scope="col" Distance (KM)
+			        th scope="col" Price (RM)
 			        th scope="col" Edit
 
 			    - @listing.each_with_index do |listing, index|
