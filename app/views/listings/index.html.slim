@@ -4,13 +4,13 @@ div.container
 	div.row
 		- @listing.each_with_index do |listing, index|
 			div.col-md-4.mb-5
-				div.card.h-100
+				div.card.h-80
 					= link_to new_booking_path(listing_id: listing.id) do
 						- if listing.photos.attached?
 							= image_tag listing.photos, height: 300, class: "img-fluid"
 						- else
 							p no photo
-					div.card-body.border-border-5
+					div.card-body
 						p.card-text = "FROM: #{listing.pickup_location}"
 						p.card-text = "TO: #{listing.dropoff_location}"
 						p.card-text = "#{listing.distance} KM"
