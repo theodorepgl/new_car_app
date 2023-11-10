@@ -4,13 +4,13 @@ div.container.w-50
       div.content
 
         header
-          h1 Hi, let's test a transaction
-          p Make a test payment with Braintree using PayPal or a card
+          h1 Hi, proceed to Payment
+          p Make a test payment with a card
 
         = form_tag("/checkouts", method: "post", id: "payment-form") do
           section
             <label for="amount">
-              <span class="input-label">Amount</span>
+              <span class="input-label">Key in the Total Amount</span>
               div.input-wrapper.amount-wrapper
                 <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
             </label>
@@ -19,7 +19,7 @@ div.container.w-50
               div#bt-dropin
 
           <input type="hidden" id="nonce" name="payment_method_nonce" />
-          <button class="button" type="submit"><span>Test Transaction</span></button>
+          <button class="button" type="submit"><span>Proceed payment</span></button>
 
 
   <script src="https://js.braintreegateway.com/web/dropin/1.40.1/js/dropin.min.js"></script>
