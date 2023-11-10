@@ -16,10 +16,10 @@ section.col-md-4.offset-md-4.bg-secondary.rounded-5.p-5
         th= form.label :dropoff_location, 'Dropoff Location:'
         td= form.text_field :dropoff_location, value: @listing.dropoff_location, readonly: true
       tr
-        th= form.label :distance, 'Total Distance:'
+        th= form.label :distance, 'Total Distance(km):'
         td= form.text_field :distance, value: @listing.distance, readonly: true
       tr
-        th= form.label :price, 'Delivery Price:'
+        th= form.label :price, 'Delivery Price(RM):'
         td= form.text_field :price, value: @listing.price, readonly: true
         
     = form.hidden_field :listing_id, value: @listing.id
