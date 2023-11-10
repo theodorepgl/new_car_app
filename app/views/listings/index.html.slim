@@ -15,7 +15,7 @@ div.container
 						p.card-text = "TO: #{listing.dropoff_location}"
 						p.card-text = "#{listing.distance} KM"
 						p.card-text = number_to_currency(listing.price, unit:"RM ")
-						p = link_to 'Make Booking', new_booking_path(listing_id: listing.id), class: 'btn btn-secondary'
+						p = link_to 'Make Booking', new_booking_path(listing_id: listing.id), class: 'btn btn-outline-warning'
 
 					br
 
@@ -42,6 +42,6 @@ div.container
 			        td= listing.dropoff_location
 			        td= listing.distance
 			        td= listing.price
-			        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-secondary'
+			        td= link_to 'Edit Listing', edit_listing_path(listing), class: 'btn btn-outline-info'
 
-			= link_to 'New Listing', new_listing_path, class: 'btn btn-secondary me-2'
+			= link_to 'New Listing', new_listing_path, class: 'btn btn-outline-success'
